@@ -1,0 +1,20 @@
+<!DOCTYPE html> <!--template that allows user to edit items already in the list-->
+<html>
+<head>
+    <title>Hack Planner App: Edit</title>
+    <!-- a link to the styles; references that it is static (unchanging) and imports all styles in the styles file -->
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='styles.css') }}"></link>
+</head>
+<body>
+    <!-- container class provides a responsive fixed width container -->
+    <div class="container">
+        <h1>Edit Item</h1>
+        <!--sending the user ot the edit directory instead of the add directory; passing ID of item into template as a argument-->
+        <!-- add form allows us to apply all relevant styles in that class to this form -->
+        <form class = "edit-form" action = "/edit/{{ item_id }}" method="post">
+            <input type="text" name="item" value="{{ item }}"> 
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

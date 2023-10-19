@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- this is going to be the template fr our checklist -->
+<html>
+    <head> <!-- user for information related to meta data of teh project-->
+        <title>Hack Planner App</title>
+        <!-- a link to the styles; references that it is static (unchanging) and imports all styles in the styles file -->
+        <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='styles.css')}}">
+    </head>
+    <body> <!-- body is what you see when you navigate the bag -->
+        <div class="container">
+            <h1>HackPlanner</h1>
+            <ul class = "checklist-items"> <!-- ordered list -->
+                {% for item in items %} <!-- curly braces used to denote that information used in the template is coming from the backend (flask)-->
+                <li>
+                    {{ item[1] }} <!-- uses tuple unpacking to diplay only the task name -->
+                    <a href = "/edit/{{ item[0] }}">Edit</a> <!-- gets the item id associated with the specific item in the list-->
+                    <a href = "/delete/{{ item[0] }}">Delete</a> 
+                </li>
+                {% endfor %} <!-- we must end our for loops in flask -->
+            </ul>
+            <!-- add form allows us to apply all relevant styles in that class to this form -->
+            <form class = "add-form" action = "/add" method = "post"> 
+                <input type="text" name="item" placeholder="Enter item"> <!-- post method sends info to the back end of the project-->
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </body>
+</html>
+

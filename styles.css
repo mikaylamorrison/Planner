@@ -1,0 +1,82 @@
+/* static = resource/asset that will not change with user input. It's a great way to hold things that won't change.*/
+
+/* these all represent labels that we will apply to individual parts of the checklist page */
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #ecf7f0ec;
+    margin: 0; 
+    padding: 0;
+}
+
+ /* the first header that the user will see */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* where the checklist itself will go */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* these will be within the container */
+.checklist-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* only when the class checklist items is associated with a list */
+.checklist-items li {
+    background-color: #aeccb9ec;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* allows us to specify how we want to link for each item to look */
+.checklist-items li a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* specific classes for the input fields; both will have the same style */
+.add-form input[type="text"],
+.edit-form input[type="text"]
+{
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+/* customizing the buttons associated with the add and edit forms */
+.add-form button,
+.edit-form button  {
+    padding: 10px;
+    background-color: #aeccb9ec;
+    border: none;
+    color: #3e4f44ec;
+    border-radius: 5px;
+    cursor: pointer;
+    /* cursor allows us to specify how we want our cursor to look when it hovers over the button*/
+}
+
+/* specify how we want the button to look when we hover over it with our cursor */
+.add-form button:hover,
+.edit-form button:hover {
+    background-color: #729880ec;
+}
+
+/* specify how we want the text field to look when they are clicked into */
+.add-form input[type="text"]:focus,
+.edit-form input[type="text"]:focus {
+    outline: none;
+    border-color: #333;
+}
